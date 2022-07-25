@@ -1,9 +1,7 @@
 import { collection, getFirestore, onSnapshot } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { Snapshot, useRecoilState } from "recoil";
-import { getPostState } from "../atoms/postAtom";
 import { handlePostState, useSSRPostsState } from "../atoms/postAtom";
-import { auth, db } from "../util/firebase";
 import { getSession, useSession } from "next-auth/react";
 import { getDocs } from "firebase/firestore";
 import { Row, Col } from "react-bootstrap";
@@ -14,7 +12,6 @@ function Feed({ userID }) {
   const { data: session } = useSession();
   const [realtimePosts, setRealtimePosts] = useState([]);
   const [handlePost, setHandlePost] = useRecoilState(handlePostState);
-  const [postState, setPostState] = useRecoilState(getPostState);
   const [useSSRPost, setUseSSRPost] = useRecoilState(useSSRPostsState);
 
   useEffect(() => {
