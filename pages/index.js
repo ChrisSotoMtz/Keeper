@@ -1,6 +1,3 @@
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import Header from "../Components/Header";
 import Form from "react-bootstrap/Form";
 import { AnimatePresence } from "framer-motion";
@@ -19,7 +16,7 @@ export default function Home({ posts,path}) {
   const [modalType, setModalType] = useRecoilState(modalTypeState);
   const { data: session } = useSession();
   return (
-    <div className={styles.container}>
+    <div>
       <Header />
       <Feed  userID ={session?.user?.id}/>
       <AnimatePresence>
