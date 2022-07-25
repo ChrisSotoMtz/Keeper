@@ -13,6 +13,8 @@ import { db } from "../util/firebase";
 import { collection, getDocs, onSnapshot } from "firebase/firestore";
 import React, { useState } from "react";
 export default function Home({ posts,path}) {
+
+  console.log(process.env.REACT_APP_FIREBASE_API_KEY);
   const [modalOpen, setModalOpen] = useRecoilState(modalState);
   const [modalType, setModalType] = useRecoilState(modalTypeState);
   const { data: session } = useSession();

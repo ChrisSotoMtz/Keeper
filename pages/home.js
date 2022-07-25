@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TelegramIcon from "@mui/icons-material/Telegram";
-import GitHubIcon from '@mui/icons-material/GitHub';
+import GitHubIcon from "@mui/icons-material/GitHub";
 import Banner from "../Components/Banner";
 import { getProviders, signIn } from "next-auth/react";
 
@@ -18,14 +18,16 @@ function home({ providers }) {
             <h1 className="nav-title">Keepper</h1>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Collapse id="basic-navbar-nav" className="colapse">
             <Nav
-              className="ms-auto me-4"
+              className="ms-auto me-4 nav-items"
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="#action1">About this project</Nav.Link>
-              <Nav.Link href="#action2">Portfolio</Nav.Link>
+              <div className="details-nav">
+                <Nav.Link href="#action1">About this project</Nav.Link>
+                <Nav.Link href="#action2">Portfolio</Nav.Link>
+              </div>
             </Nav>
 
             <Nav className="cont-icon">
@@ -42,7 +44,7 @@ function home({ providers }) {
             </Nav>
 
             {Object.values(providers).map((provider) => (
-              <div key={provider.name}>
+              <div key={provider.name} className="button-container">
                 <Button
                   className="log-button"
                   onClick={() => signIn(provider.id)}

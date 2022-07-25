@@ -9,19 +9,18 @@ import {getStorage} from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDfoh3mH7STfsJaPht-qDB2s8TZYRXuugw",
-  authDomain: "keeper-b29e4.firebaseapp.com",
-  databaseURL: "https://keeper-b29e4-default-rtdb.firebaseio.com",
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.FIREBASE_DATABASE_URL,
   projectId: "keeper-b29e4",
-  storageBucket: "keeper-b29e4.appspot.com",
-  messagingSenderId: "534885630565",
-  appId: "1:534885630565:web:72d1a968130b47c5087c8",
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId:  process.env.FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
 const app =  !getApps().length ? initializeApp(firebaseConfig): getApp();
-
 const db = getFirestore();
 const storage = getStorage();
-const auth = getAuth();
-export {app, db, storage,firebaseConfig, auth};
+
+export {app, db, storage,firebaseConfig};
