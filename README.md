@@ -15,7 +15,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## About this project
 
-this is a note app, your notes are saved in a firebase database, keep your ideas safe
-You can check out [https://keeper-six.vercel.app) - your feedback and contributions are welcome!
+this is a note app, your notes are saved in a firebase database, keeping your ideas safe
+
+-You can check out [https://keeper-six.vercel.app) - your feedback and contributions are welcome!
 
 
